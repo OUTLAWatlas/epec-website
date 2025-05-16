@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPEC - Event Planning and Execution Committee</title>
+  <link rel="stylesheet" href="css/style1.css">
+  <script src="js/firefly1.js" defer></script>
+  <script src="js/popup1.js" defer></script>
+  <script src="js/formValidation1.js"></script>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img.logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    ul.navbar {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.navbar li {
+      display: inline;
+    }
+
+    ul.navbar a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation bar -->
+<nav>
+  <ul class="navbar">
+    <li><a href="#intro">About EPEC</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#success-stories">Success Stories</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <!-- Profile Favicon -->
+  <img src="favicon.webp" alt="User Profile" class="profile-icon">
+</nav>
+
+<!-- Header with logo -->
+<header>
+  <img src="epec logo.png" alt="EPEC Logo" class="logo">
+  <div>
+    <h1>Event Planning and Execution Committee (EPEC)</h1>
+    <p>Organizing Excellence, Year After Year</p>
+  </div>
+</header>
+    <section id="intro">
+        <h2>About Us</h2>
+        <p>The Event Planning and Execution Committee (EPEC) is the heart of all the vibrant events and fests conducted at our college every academic year. From spirited competitions to grand cultural nights, EPEC ensures every event is a resounding success.</p>
+    </section>
+
+    <section id="events">
+        <h2>Major Events</h2>
+        <div class="cards">
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="vishwakarandak.png" alt="Vishwakarandak">
+                    </div>
+                    <h3>Vishwakarandak</h3>
+                    <p>The ultimate intra-college competition, bringing out the best talents of VIT.</p>
+                </div>
+            
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="crescendo.jpg" alt="Crescendo">
+                    </div>
+                    <h3>Crescendo</h3>
+                    <p>The grand inter-college competition where creativity knows no bounds.</p>
+                </div>
+            
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="vishwotsav.jpg" alt="Vishwotsav">
+                    </div>
+                    <h3>Vishwotsav</h3>
+                    <p>The flagship cultural fest celebrating art, music, and life!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="success-stories">
+        <h2>Success Stories</h2>
+        <div class="cards">
+            <div class="cards-container">
+                <div class="card success-card">
+                    <div class="card-image-container">
+                        <img src="successstory1.jpg" alt="Success Story 1">
+                    </div>
+                    <h3>Vishwotsav 2025</h3>
+                    <p>Over 5,000 attendees from across the country, with a 98% satisfaction rate. Perfectly executed despite challenging weather conditions.</p>
+                </div>
+                
+                <div class="card success-card">
+                    <div class="card-image-container">
+                        <img src="success2.jpg"Success Story 2">
+                    </div>
+                    <h3>Crescendo 2025</h3>
+                    <p>Brought together 50+ industry experts and secured sponsorships worth ₹15 lakhs, setting a new record for technical events at VIT.</p>
+                </div>
+                
+                <div class="card success-card">
+                    <div class="card-image-container">
+                        <img src="vishwakarandak.jpg" alt="Success Story 3">
+                    </div>
+                    <h3>Vishwakarandak 2025</h3>
+                    <p>Successfully coordinated 30+ events with 2,000+ participants from 65 colleges within a 3-day timeframe without a single schedule delay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:epec@vit.edu">epec@vit.edu</a></li>
+            <li><strong>Instagram:</strong> <a href="https://instagram.com/vit_pune_official" target="_blank">@vit_pune_official</a></li>
+            <li><strong>Phone:</strong> +91-1234567890</li>
+        </ul>
+
+        <form action="javascript:void(0);" method="POST" id="contactForm">
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 EPEC | Vishwakarma Institute of Technology, Pune</p>
+    </footer>
+
+</body>
+</html>
