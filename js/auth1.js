@@ -35,7 +35,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   loginButton.disabled = true;
   
   setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "main.html";
   }, 1500);
 });
 
