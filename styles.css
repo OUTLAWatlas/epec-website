@@ -97,10 +97,23 @@ body.theme-dark .navbar {
 }
 
 /* --------- Header Section --------- */
+/* Header Style (Theme Adaptive) */
 header {
-  background: linear-gradient(135deg, var(--bs-primary-light), var(--bs-primary-mid), var(--bs-primary-dark));
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: background 0.5s ease, color 0.5s ease;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+body.theme-dark header {
+  background: linear-gradient(135deg, #1a1a40, #3b275d, #2c2c3e);
   color: white;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-light header {
+  background: linear-gradient(to bottom, #b3e0ff, #e6f7ff);
+  color: #1a1a1a;
+  box-shadow: inset 0 -2px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* --------- Cards (Events) --------- */
