@@ -210,3 +210,21 @@ h2 {
 body.theme-dark h2 {
   color: var(--bs-accent);
 }
+/* Custom colors for tech & cultural buttons */
+.filter-btn[data-type="tech"] {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+}
+.filter-btn[data-type="tech"]:hover {
+  background-color: #357ab7;
+}
+
+.filter-btn[data-type="cultural"] {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+}
+.filter-btn[data-type="cultural"]:hover {
+  background-color: #e25b50;
+}
