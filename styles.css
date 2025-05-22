@@ -1,75 +1,212 @@
+/* styles.css */
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #6457c6, #8e2de2, #4a00e0);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  overflow-x: hidden;
-  transition: background 0.3s ease;
+/* --------- Theme Color Variables --------- */
+:root {
+  --bs-primary-light: #417d7a;
+  --bs-primary-mid: #6a4c93;
+  --bs-primary-dark: #3b275d;
+  --bs-accent: #8e2de2;
+  --bs-bg-light: #f9f9fa;
+  --bs-text-light: #212529;
+  --bs-bg-dark: #1e1e2f;
+  --bs-text-dark: #ddd;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* --------- Body Themes --------- */
+body.theme-light {
+  background-color: var(--bs-bg-light);
+  color: var(--bs-text-light);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+body.theme-dark {
+  background-color: var(--bs-bg-dark);
+  color: var(--bs-text-dark);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* --------- Firefly Canvas --------- */
 #fireflyCanvas {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
   z-index: -1;
-  pointer-events: none;
-  opacity: 0.7;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  color: white;
+/* --------- Navbar --------- */
+.navbar {
+  transition: background-color 0.4s ease;
 }
 
+body.theme-light .navbar {
+  background-color: var(--bs-primary-dark);
+}
+
+body.theme-dark .navbar {
+  background-color: #111129; /* darker */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--bs-accent) !important;
+  text-decoration: underline;
+}
+
+/* --------- Dark Mode Toggle Fix --------- */
 .theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 9999;
+  position: fixed;
+  top: 0.75rem;
+  right: 4rem; /* Move toggle button to avoid navbar "Contact" overlap */
+  z-index: 1050; /* Above navbar */
 }
 
-.ripple {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple::after {
-  content: "";
-  background: rgba(255, 255, 255, 0.4);
-  position: absolute;
-  border-radius: 100%;
-  transform: scale(0);
-  animation: rippleEffect 0.6s linear;
-  opacity: 0;
-  pointer-events: none;
-}
-
-@keyframes rippleEffect {
-  to {
-    transform: scale(4);
-    opacity: 0;
+@media (max-width: 991.98px) {
+  /* On small screens, move toggle left so it doesn't cover navbar toggler */
+  .theme-toggle {
+    right: 2.5rem;
   }
 }
 
-/* Dark theme */
-body.theme-dark {
-  background: linear-gradient(135deg, #111, #333);
-  color: #eee;
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  border-color: #ddd;
+  color: #ddd;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
-body.theme-dark .card {
-  background: rgba(0, 0, 0, 0.6);
+#darkModeToggle:hover {
+  background-color: var(--bs-accent);
+  color: white;
+  border-color: var(--bs-accent);
+}
+
+/* --------- Header Section --------- */
+header {
+  background: linear-gradient(135deg, var(--bs-primary-light), var(--bs-primary-mid), var(--bs-primary-dark));
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
   color: white;
 }
 
+/* --------- Cards (Events) --------- */
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.theme-dark .card {
+  background-color: #2c2c3e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+  font-weight: 700;
+  color: var(--bs-primary-dark);
+}
+
+body.theme-dark .card-title {
+  color: var(--bs-accent);
+}
+
+.card-text {
+  color: #555;
+}
+
+body.theme-dark .card-text {
+  color: #ccc;
+}
+
+/* --------- Contact Section --------- */
+#contact ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--bs-primary-dark);
+}
+
+body.theme-dark #contact ul li {
+  color: var(--bs-accent);
+}
+
+#contact a {
+  color: var(--bs-primary-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: var(--bs-accent);
+  text-decoration: underline;
+}
+
+/* --------- Form Controls --------- */
+#contactForm input,
+#contactForm textarea {
+  box-shadow: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: var(--bs-accent);
+  box-shadow: 0 0 8px var(--bs-accent);
+  outline: none;
+}
+
+/* Popup messages */
+#popup .alert {
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+/* --------- Buttons --------- */
+.btn-primary {
+  background-color: var(--bs-primary-mid);
+  border-color: var(--bs-primary-mid);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+  color: #fff;
+}
+
+/* Filter buttons */
+.btn-group .btn {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --------- Typography --------- */
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--bs-primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+body.theme-dark h2 {
+  color: var(--bs-accent);
+}
