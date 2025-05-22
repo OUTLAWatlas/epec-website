@@ -227,3 +227,15 @@ body.theme-dark h2 {
 .filter-btn[data-type="cultural"]:hover {
   background-color: #e25b50;
 }
+/* Frosted Glass Effect for Login Card */
+.login-glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
