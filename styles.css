@@ -1,0 +1,75 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #6457c6, #8e2de2, #4a00e0);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow-x: hidden;
+  transition: background 0.3s ease;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#fireflyCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  color: white;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  border-radius: 100%;
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Dark theme */
+body.theme-dark {
+  background: linear-gradient(135deg, #111, #333);
+  color: #eee;
+}
+
+body.theme-dark .card {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
