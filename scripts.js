@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let height = window.innerHeight;
   canvas.width = width;
   canvas.height = height;
-
   canvas.style.zIndex = "-1";
 
   let theme = document.body.classList.contains("theme-dark") ? "dark" : "light";
 
-  // Fireflies (for dark mode)
+  // Fireflies for dark theme
   const fireflies = Array.from({ length: 60 }).map(() => ({
     x: Math.random() * width,
     y: Math.random() * height,
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: Math.random()
   }));
 
-  // Clouds (for light mode)
+  // Clouds for light theme
   const clouds = Array.from({ length: 5 }).map(() => ({
     x: Math.random() * width,
     y: Math.random() * (height / 2),
@@ -41,6 +40,28 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.fill();
   }
 
+  function drawMoon() {
+    const moonX = width - 100;
+    const moonY = 100;
+    const moonRadius = 35;
+
+    // Glow effect
+    const gradient = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, moonRadius * 1.5);
+    gradient.addColorStop(0, "rgba(255, 255, 210, 0.8)");
+    gradient.addColorStop(1, "rgba(255, 255, 210, 0)");
+
+    ctx.beginPath();
+    ctx.arc(moonX, moonY, moonRadius * 1.5, 0, 2 * Math.PI);
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    // Moon body
+    ctx.beginPath();
+    ctx.arc(moonX, moonY, moonRadius, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgba(255, 255, 210, 0.95)";
+    ctx.fill();
+  }
+
   function drawCloud(x, y, size) {
     ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
     ctx.beginPath();
@@ -54,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.clearRect(0, 0, width, height);
 
     if (theme === "dark") {
+      drawMoon();
       for (let f of fireflies) {
         ctx.beginPath();
         ctx.arc(f.x, f.y, f.radius, 0, 2 * Math.PI);
@@ -81,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animate();
 
-  // Resize canvas on window resize
+  // Resize canvas
   window.addEventListener("resize", () => {
     width = window.innerWidth;
     height = window.innerHeight;
@@ -97,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     theme = document.body.classList.contains("theme-dark") ? "dark" : "light";
   });
 
-  // Login logic
+  // Login form validation
   $("#loginForm").on("submit", function (e) {
     e.preventDefault();
     const email = $("#email").val().trim();
