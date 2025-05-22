@@ -38,18 +38,23 @@ body.theme-dark .card h3 {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
   transition: background-color 0.4s ease;
   position: relative;
   z-index: 2;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
+/* Light Theme Navbar: Cool Blue */
 body.theme-light .navbar {
-  background-color: rgba(59, 39, 93, 0.85);
+  background-color: rgba(30, 70, 150, 0.75); /* deep semi-transparent blue */
 }
 
+/* Dark Theme Navbar: Vibrant Indigo/Violet */
 body.theme-dark .navbar {
-  background-color: rgba(17, 17, 41, 0.8);
+  background-color: rgba(106, 76, 147, 0.8); /* matching --bs-primary-mid */
 }
 
 .navbar .navbar-brand,
