@@ -2,161 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EPEC - Event Planning and Execution Committee</title>
-  <link rel="stylesheet" href="css/style1.css">
-  <script src="js/firefly1.js" defer></script>
-  <script src="js/popup1.js" defer></script>
-  <script src="js/formValidation1.js"></script>
-  <style>
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    header img.logo {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    ul.navbar {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul.navbar li {
-      display: inline;
-    }
-
-    ul.navbar a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .profile-icon {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EPEC Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<body class="bg-light">
 
-<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="#">EPEC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#intro">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#success-stories">Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- Navigation bar -->
-<nav>
-  <ul class="navbar">
-    <li><a href="#intro">About EPEC</a></li>
-    <li><a href="#events">Events</a></li>
-    <li><a href="#success-stories">Success Stories</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <!-- Profile Favicon -->
-  <img src="favicon.webp" alt="User Profile" class="profile-icon">
-</nav>
-
-<!-- Header with logo -->
-<header>
-  <img src="epec logo.png" alt="EPEC Logo" class="logo">
-  <div>
-    <h1>Event Planning and Execution Committee (EPEC)</h1>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center py-5">
+    <img src="epec logo.png" alt="Logo" style="width: 80px;">
+    <h1 class="mt-3">Event Planning and Execution Committee (EPEC)</h1>
     <p>Organizing Excellence, Year After Year</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="intro" class="container my-5 text-center">
+    <h2>About Us</h2>
+    <p>EPEC organizes vibrant college events each year — from spirited competitions to grand cultural nights.</p>
+  </section>
+
+  <!-- Event Filter Buttons -->
+  <div class="container text-center mb-4">
+    <div class="btn-group" role="group">
+      <button class="btn btn-outline-secondary filter-btn" data-type="all">All</button>
+      <button class="btn btn-outline-primary filter-btn" data-type="tech">Tech</button>
+      <button class="btn btn-outline-success filter-btn" data-type="cultural">Cultural</button>
+    </div>
   </div>
-</header>
-    <section id="intro">
-        <h2>About Us</h2>
-        <p>The Event Planning and Execution Committee (EPEC) is the heart of all the vibrant events and fests conducted at our college every academic year. From spirited competitions to grand cultural nights, EPEC ensures every event is a resounding success.</p>
-    </section>
 
-    <section id="events">
-        <h2>Major Events</h2>
-        <div class="cards">
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-image-container">
-                        <img src="vishwakarandak.png" alt="Vishwakarandak">
-                    </div>
-                    <h3>Vishwakarandak</h3>
-                    <p>The ultimate intra-college competition, bringing out the best talents of VIT.</p>
-                </div>
-            
-                <div class="card">
-                    <div class="card-image-container">
-                        <img src="crescendo.jpg" alt="Crescendo">
-                    </div>
-                    <h3>Crescendo</h3>
-                    <p>The grand inter-college competition where creativity knows no bounds.</p>
-                </div>
-            
-                <div class="card">
-                    <div class="card-image-container">
-                        <img src="vishwotsav.jpg" alt="Vishwotsav">
-                    </div>
-                    <h3>Vishwotsav</h3>
-                    <p>The flagship cultural fest celebrating art, music, and life!</p>
-                </div>
-            </div>
+  <!-- Events Section -->
+  <section id="events" class="container">
+    <h2 class="text-center mb-4">Major Events</h2>
+    <div class="row g-4" id="eventCards">
+      <div class="col-md-4 event-card" data-type="tech">
+        <div class="card h-100">
+          <img src="vishwakarandak.png" class="card-img-top" alt="Vishwakarandak">
+          <div class="card-body">
+            <h5 class="card-title">Vishwakarandak</h5>
+            <p class="card-text">Intra-college tech competition.</p>
+            <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#eventModal" data-title="Vishwakarandak" data-content="Tech competition for VIT students.">Details</button>
+          </div>
         </div>
-    </section>
-    
-    <section id="success-stories">
-        <h2>Success Stories</h2>
-        <div class="cards">
-            <div class="cards-container">
-                <div class="card success-card">
-                    <div class="card-image-container">
-                        <img src="successstory1.jpg" alt="Success Story 1">
-                    </div>
-                    <h3>Priya Sharma <br>
-                    Batch of 2024 | EPEC Core Member</h3>
-                    <p>
-                        Priya joined EPEC in her first year at VIT Pune, eager to learn and contribute. She quickly became known for her creativity and teamwork. In her third year, Priya led the organization of the annual EPEC Tech Fest, managing a team of 40+ students and collaborating with industry experts.
-                                            "EPEC gave me the confidence to lead and innovate. Organizing the Tech Fest was a turning point in my journey, and the skills I gained helped me secure an internship at a top tech company."
-                                         Today, Priya is a proud EPEC alumna, inspiring juniors and giving back to the club through mentorship sessions.</p>
-                </div>  
+      </div>
+      <div class="col-md-4 event-card" data-type="cultural">
+        <div class="card h-100">
+          <img src="crescendo.jpg" class="card-img-top" alt="Crescendo">
+          <div class="card-body">
+            <h5 class="card-title">Crescendo</h5>
+            <p class="card-text">Inter-college cultural event.</p>
+            <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#eventModal" data-title="Crescendo" data-content="Inter-college cultural extravaganza.">Details</button>
+          </div>
         </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <ul>
-            <li><strong>Email:</strong> <a href="mailto:epec@vit.edu">epec@vit.edu</a></li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/vit_pune_official" target="_blank">@vit_pune_official</a></li>
-            <li><strong>Phone:</strong> +91-1234567890</li>
-        </ul>
+      </div>
+      <div class="col-md-4 event-card" data-type="cultural">
+        <div class="card h-100">
+          <img src="vishwotsav.jpg" class="card-img-top" alt="Vishwotsav">
+          <div class="card-body">
+            <h5 class="card-title">Vishwotsav</h5>
+            <p class="card-text">Annual cultural fest of VIT.</p>
+            <button class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#eventModal" data-title="Vishwotsav" data-content="Cultural festival with music, art and dance.">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <form action="javascript:void(0);" method="POST" id="contactForm">
-            <div class="form-group">
-                <input type="text" name="name" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+  <!-- Event Modal -->
+  <div class="modal fade" id="eventModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Event Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="modalContent"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        <p>© 2025 EPEC | Vishwakarma Institute of Technology, Pune</p>
-    </footer>
+  <!-- Contact Section -->
+  <section id="contact" class="container my-5">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form id="contactForm" class="mx-auto" style="max-width: 600px;">
+      <input type="text" class="form-control mb-3" id="name" placeholder="Your Name" required>
+      <input type="email" class="form-control mb-3" id="emailContact" placeholder="Your Email" required>
+      <textarea class="form-control mb-3" id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary w-100">Send Message</button>
+      <div id="popup" class="mt-3"></div>
+    </form>
+  </section>
 
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    &copy; 2025 EPEC | Vishwakarma Institute of Technology, Pune
+  </footer>
+
+  <script>
+    // Filter buttons
+    $(".filter-btn").click(function () {
+      const type = $(this).data("type");
+      $(".event-card").each(function () {
+        const category = $(this).data("type");
+        $(this).toggle(type === "all" || type === category);
+      });
+    });
+
+    // Modal data transfer
+    $("#eventModal").on("show.bs.modal", function (event) {
+      const button = $(event.relatedTarget);
+      const title = button.data("title");
+      const content = button.data("content");
+      const modal = $(this);
+      modal.find(".modal-title").text(title);
+      modal.find("#modalContent").text(content);
+    });
+
+    // Contact form
+    $("#contactForm").on("submit", function (e) {
+      e.preventDefault();
+      const name = $("#name").val().trim();
+      const email = $("#emailContact").val().trim();
+      const message = $("#message").val().trim();
+      if (!name || !email || !message) {
+        $("#popup").html('<div class="alert alert-danger">Please fill all fields.</div>');
+        return;
+      }
+      $("#popup").html('<div class="alert alert-success">Message sent!</div>');
+      $(this).trigger("reset");
+    });
+  </script>
 </body>
 </html>
