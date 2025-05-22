@@ -25,7 +25,10 @@ body.theme-dark {
   color: var(--bs-text-dark);
   transition: background-color 0.4s ease, color 0.4s ease;
 }
-
+/* Make login heading white in dark mode for better readability */
+body.theme-dark .card h3 {
+  color: white;
+}
 /* --------- Firefly Canvas --------- */
 #fireflyCanvas {
   position: fixed;
