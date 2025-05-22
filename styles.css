@@ -14,9 +14,11 @@
 
 /* --------- Body Themes --------- */
 body.theme-light {
-  background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+  background: linear-gradient(to bottom, #b3e0ff 0%, #e6f7ff 100%);
   color: var(--bs-text-light);
+  transition: background 0.4s ease, color 0.4s ease;
 }
+
 
 body.theme-dark {
   background-color: var(--bs-bg-dark);
