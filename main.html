@@ -37,13 +37,14 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#intro">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#success-stories">Success Stories</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Header -->
-<header class="text-white text-center py-5 transparent-header">
+  <header class="text-white text-center py-5 transparent-header">
     <img src="epec logo.png" alt="Logo" style="width: 80px;" class="mb-3" />
     <h1>Event Planning and Execution Committee (EPEC)</h1>
     <p>Organizing Excellence, Year After Year</p>
@@ -98,6 +99,43 @@
     </div>
   </section>
 
+  <!-- Success Stories Section -->
+  <section id="success-stories" class="container my-5" data-aos="fade-up">
+    <h2 class="text-center mb-4">Success Stories</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="success1.jpg" class="card-img-top" alt="Vishwotsav 2024">
+          <div class="card-body">
+            <h5 class="card-title">Vishwotsav 2024</h5>
+            <p class="card-text">Over 5,000 attendees from across the country, with a 98% satisfaction rate. Perfectly executed despite challenging weather conditions.</p>
+            <a href="mailto:epec@vit.edu?subject=Success%20Story%20Request:%20Vishwotsav%202024" class="btn btn-primary w-100 mt-2">Email Me</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="success2.jpg" class="card-img-top" alt="Tech Summit 2024">
+          <div class="card-body">
+            <h5 class="card-title">Tech Summit 2024</h5>
+            <p class="card-text">Brought together 50+ industry experts and secured sponsorships worth ₹15 lakhs, setting a new record for technical events at VIT.</p>
+            <a href="mailto:epec@vit.edu?subject=Success%20Story%20Request:%20Tech%20Summit%202024" class="btn btn-primary w-100 mt-2">Email Me</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="success3.jpg" class="card-img-top" alt="Crescendo 2023">
+          <div class="card-body">
+            <h5 class="card-title">Crescendo 2023</h5>
+            <p class="card-text">Successfully coordinated 30+ events with 2,000+ participants from 65 colleges within a 3-day timeframe without a single schedule delay.</p>
+            <a href="mailto:epec@vit.edu?subject=Success%20Story%20Request:%20Crescendo%202023" class="btn btn-primary w-100 mt-2">Email Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="container my-5" data-aos="fade-up">
     <h2 class="text-center mb-4">Contact Us</h2>
@@ -128,7 +166,6 @@
   <script>
     AOS.init();
 
-    // Event filtering
     $(".filter-btn").on("click", function () {
       const type = $(this).data("type");
       $(".event-card").each(function () {
@@ -137,7 +174,6 @@
       });
     });
 
-    // Contact Form submission with validation & popup message
     $("#contactForm").on("submit", function (e) {
       e.preventDefault();
       const name = $("#name").val().trim();
@@ -151,14 +187,9 @@
       $(this).trigger("reset");
     });
 
-    // Theme toggle
     $("#darkModeToggle").on("click", function () {
       $("body").toggleClass("theme-dark theme-light");
     });
   </script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="scripts.js"></script>
 </body>
 </html>
